@@ -58,7 +58,7 @@ public class ClassClass {
         // 동적 호출
         // 메서드를 Class 리플렉션에서 뽑아낸 Method 리플렉션에서 강제로 호출
         Method addMethod = arrayListClass.getMethod("add", Object.class);
-        addMethod.invoke(arrList, "add");
+        addMethod.invoke(arrList, "a");
 
         /*
         Reflection 주의사항
