@@ -1,5 +1,9 @@
 package library.util.ex;
 
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+
 public class Ex3 {
     public static void main(String[] args) {
 /*
@@ -19,5 +23,25 @@ public class Ex3 {
     ===
     최종 금액: 1628.89
  */
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("원금을 입력해주세요 : ");
+        BigDecimal principal = scanner.nextBigDecimal();
+
+        System.out.print("연이율을 입력하세요 : (예: 0.05)");
+        BigDecimal annualInterestRate = scanner.nextBigDecimal();
+
+        System.out.print("기간을 입력하세요 (년) : ");
+        int year = scanner.nextInt();
+
+        // 최종 금액 = 원금 * (1 + 연이율)^기간
+        // int i = principal * (1 + annualInterestRate) ^ year;
+        BigDecimal finalResult = principal
+                .multiply(BigDecimal.ONE
+                        .add(annualInterestRate)
+                        .pow(year));
+
+        System.out.printf("최종금액 : %,.2f원", finalResult);
+
     }
 }
