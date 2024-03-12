@@ -1,4 +1,4 @@
-package generic.ex;
+package generic.ex.ex5;
 
 public class Ex5 {
     /*
@@ -43,4 +43,6 @@ public class Ex5 {
     1. 조건문과 instanceof 를 활용하는 방법
     2. 인터페이스 추상 메서드와 오버라이딩 메서드을 추가하는 방법
      */
+
+
 }

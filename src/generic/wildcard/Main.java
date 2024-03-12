@@ -12,6 +12,7 @@ public class Main {
         HighSchoolStudent highSchoolStudent = new HighSchoolStudent();
         MiddleSchoolStudent middleSchoolStudent = new MiddleSchoolStudent();
 
+        // 지원서
         Applicant<Person> personApplicant = new Applicant<>(person);
         Applicant<Worker> workerApplicant = new Applicant<>(worker);
         Applicant<Student> studentApplicant = new Applicant<>(student);
