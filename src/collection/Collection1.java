@@ -7,7 +7,7 @@ public class Collection1 {
     // 컬렉션 프레임워크 : 객체들을 효율적으로 추가, 삭제, 검색 할 수 있는 인터페이스 및 구현 클래스의 모음
 
     // 주요 인터페이스 (및 구현 클래스)
-    // 1. List -> ArrayList, LikedList
+    // 1. List -> ArrayList, LinkedList
     // 2. Set -> HashSet, TreeSet
     // 3. Map -> HashMap, HastTable, TreeMap, Properties
     // + Queue : FIFO(Fist In First Out) 구조를 데이터 집합
