@@ -504,6 +504,23 @@
   - 스택 영역 : 각 스레드는 독립적인 스택을 가짐, 메서드 호출시 지역변수, 매개변수, 리턴값 등을 저장하는 곳
   - 메서드 영역 : 모든 스레드가 공유하는 메모리 영역, 클래스 정보, 상수, static 변수 등 저장
 
+## 스레드의 생명주기 (lifeCycle)
+1. New      : 스레드가 생성되고 start 가 아직 호출되기  전
+2. Runnable : start가 호출되어 언제든지 실행될 수 있는 상태
+3. Waiting  : 다른 스레드의 작업이 완료되기를 기다리는 상태
+4. Timed Waiting : 지정된 시간만큼 대기하는 상태 sleep
+5. Blocked  : Lock을 보유한 스레드가 있어서 실행이 불가한 상태
+6. Terminated : 스레드 작업 완료되었거나 예외발생으로 종료된 상태
+
+- 스레드를 일시정지 (Waiting, Timed Waiting) 상태로 보냄
+  - wait()
+  - join()
+  - sleep()
+- 일시정지 상태인 스레드를 실행 상태(Runnable) 이나 종료 상태(Terminated)로 만듬
+  - notify()
+  - interrupt()
+
+
 
 
 
