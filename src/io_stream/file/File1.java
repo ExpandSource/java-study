@@ -2,6 +2,7 @@ package io_stream.file;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 public class File1 {
     // java.io 패키지 파일과 디렉토리 정보를 가지고 있는
@@ -9,6 +10,7 @@ public class File1 {
     public static void main(String[] args) throws IOException {
         // new File("경로");
         // 절대경로
+        // 디렉토리 또는 파일로 파일 객체 생성
         File directory = new File("C:\\TempDir");
         // 해당 경로가 존재하지 않을 경우 IOException
         File file1 = new File("C:\\TempDir\\file1.txt");
@@ -25,6 +27,17 @@ public class File1 {
         for (File file : files) {
             System.out.println("파일명 : " + file.getName());
             System.out.println("절대경로 : " + file.getAbsolutePath());
+            System.out.println("읽기 가능 여부 : " + file.canRead());
+            System.out.println("쓰기 가능 여부 : " + file.canWrite());
+            System.out.println("파일 크기 : " + file.length() + "byte");
+            System.out.println("최종 수정 시간 : " + new Date( file.lastModified()) );
+            System.out.println("파일 여부 : " + file.isFile());
+            System.out.println("디렉토리 여부 : " + file.isDirectory());
+            System.out.println("존재 여부 : " + file.exists());
+
+
+
+
         }
 
     }

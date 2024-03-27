@@ -4,6 +4,7 @@ import java.io.*;
 
 public class Serial1 {
     public static void main(String[] args) {
+        // 객체 직렬화
         String filePath = "src/io_stream/serial/person.ser";
 
         Person person = new Person("홍길동", 30, 180, false, 70, new Career("조선 컴퍼니", 10));
