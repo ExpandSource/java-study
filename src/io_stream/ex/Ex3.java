@@ -1,5 +1,9 @@
 package io_stream.ex;
 
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Ex3 {
     /*
     연습문제: 텍스트 기반 채팅 로그 분석기
@@ -35,4 +39,52 @@ public class Ex3 {
     무대리: 3
     강감찬: 2
      */
+    public static void main(String[] args) {
+        Map<String, Integer> userMessageMap = new HashMap<>();
+
+        String filePath = ("src/io_stream/ex/chat.log");
+        String resultFilePath = ("src/io_stream/ex/chatSummary.log");
+
+        // 파일을 읽고 분석하여 분석 결과를 Map에 데이터를 저장
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath));){
+            String line;
+            // 종료 조건을 축약하여 while 조건문에 대입
+            while ((line = br.readLine()) != null) {
+                /* 중간과정
+                // String line = br.readLine();
+                // if (line == null) break;
+                // System.out.println(line);
+                String[] split = line.split(":");
+                // { "[08", "45] 길동씨", "좋은 아침이에요!" }
+                String s = split[1];
+                System.out.println(s);
+                String[] split1 = s.split("]");
+                // { "45", " 길동씨" }
+                String s1 = split1[1];
+                System.out.println("s1 = " + s1);
+                String trim = s1.trim();
+                System.out.println("trim = " + trim);
+                */
+                String userName = line.split(":")[1].split("]")[1].trim();
+                // 유저이름을 키로 하고 value를 횟수(기본값 0, 사용자명을 키로 만날때마다 +1씩 카운트
+                userMessageMap.put(userName, userMessageMap.getOrDefault(userName, 0) + 1);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // System.out.println("userMessageMap = " + userMessageMap);
+
+        // 분석된 결과를 file에 정해진 포맷으로 쓰기
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(resultFilePath))) {
+            for (String userName : userMessageMap.keySet()) {
+                bw.write(userName + ": " + userMessageMap.get(userName));
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 }
