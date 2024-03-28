@@ -21,6 +21,7 @@ public class File3 {
         // nio -> io 호환 가능 Path -> File
         File file = path.toFile();
         FileInputStream fileInputStream = new FileInputStream(path.toFile());
+        Path newPath = file.toPath();
 
         // 절대경로로 변경
         Path absolutePath = path.toAbsolutePath();
