@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class LoginPrepareStatement {
-    // SQL 인젝션 공격에 안전한 PrepareStatement
+    // SQL 인젝션 공격에 안전한
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/jdbc";
         String user = "root";
