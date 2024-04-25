@@ -78,10 +78,10 @@ public class MemberMain {
         // SELECT
         System.out.print("조회할 id를 입력하세요 > ");
         String id = scanner.nextLine();
-        MemberDto hong = memberDao.getMemberById(id);
-        System.out.println("ID : " + hong.getId());
-        System.out.println("이름 : " + hong.getName());
-        System.out.println("이메일 : " + hong.getEmail());
+        MemberDto member = memberDao.getMemberById(id);
+        System.out.println("ID : " + member.getId());
+        System.out.println("이름 : " + member.getName());
+        System.out.println("이메일 : " + member.getEmail());
     }
 
     private static void insert() {
